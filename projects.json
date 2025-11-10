@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Dispatch",
+    "year": 2025,
+    "platform": "PC",
+    "status": "in_progress",
+    "progress": 75,
+    "scope": ["UI", "Subtitles"],
+    "featured": true,
+    "image": "assets/dispatch.jpg",
+    "version": "1.0.0",
+    "releaseDate": "2025-11-10",
+    "downloadUrl": "https://example.com/dispatch-l10n.zip",
+    "instructions": "1. Завантажте архів з локалізацією.\n2. Розпакуйте файли в папку з грою.",
+    "links": {
+      "store": "",
+      "repo": ""
+    },
+    "summary": "6 епізодів з 8 перекладено."
+  }
+]

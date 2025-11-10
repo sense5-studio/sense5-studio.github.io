@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ukrainian game localization, distilled. Сенс збережено. Проєкти локалізації ігор від Sense5.">
+    <title>Проєкти — Локалізаційна студія «Sense5»</title>
+    
+    <meta property="og:title" content="Проєкти — Локалізаційна студія «Sense5»">
+    <meta property="og:description" content="Ukrainian game localization, distilled. Сенс збережено. Проєкти локалізації ігор від Sense5.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/og-image.png">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZW2NQ3RGP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YZW2NQ3RGP');
+    </script>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav" role="navigation" aria-label="Головна навігація">
+            <div class="nav-brand">
+                <a href="#projects" class="logo-link">
+                    <span class="logo" data-i18n="logo">Sense5</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#projects" class="nav-link" data-i18n="nav.projects">Локалізації</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">Про студію</a>
+                <a href="https://donatello.to/sense5" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-donate" data-i18n="nav.donate">Подякувати</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Перемикач теми" title="Перемкнути тему">
+                <span class="theme-icon" id="themeIcon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="projects-hero">
+                <h1 class="projects-title" data-i18n="projects.title">Локалізації</h1>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid" role="list" aria-label="Список проєктів">
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="projectModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Закрити">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-content" id="modalContent">
+            </div>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about.title">Про студію</h2>
+            <div class="about-content">
+                <p class="about-description" data-i18n="about.description">
+                    Локалізаційна студія «Sense5» займається перекладом відеоігор українською мовою. Ми працюємо над локалізацією інтерфейсу, субтитрів, діалогів та ігрового контенту, щоб зробити ігри доступними для україномовної аудиторії.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="donate" id="donate">
+        <div class="container">
+            <div class="donate-content">
+                <h2 class="section-title" data-i18n="donate.title">Підтримка</h2>
+                <p class="donate-text" data-i18n="donate.text">Якщо вам близька українська локалізація — можете подякувати.</p>
+                <a href="https://donatello.to/sense5" target="_blank" rel="noopener noreferrer" class="btn btn-donate-large" data-i18n="donate.btn">
+                    <span>Подякувати</span>
+                    <span class="icon-heart">❤️</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright" data-i18n="footer.copyright">
+                    © Sense5, <span id="currentYear"></span>
+                </p>
+                <p class="footer-tagline">Сенс збережено.</p>
+                <div class="footer-links">
+                    <a href="mailto:sense5.studio.engineer@gmail.com" class="footer-link" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
