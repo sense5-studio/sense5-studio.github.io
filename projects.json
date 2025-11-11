@@ -5,13 +5,13 @@
     "platform": "PC",
     "status": "in_progress",
     "progress": 75,
-    "scope": ["UI", "Subtitles"],
+    "scope": ["UI", "Subtitles", "GPT-5"],
     "featured": true,
     "image": "assets/dispatch.jpg",
     "version": "1.0.0",
-    "releaseDate": "2025-11-10",
-    "downloadUrl": "https://example.com/dispatch-l10n.zip",
-    "instructions": "1. Завантажте архів з локалізацією.\n2. Розпакуйте файли в папку з грою.",
+    "releaseDate": "2025-11-12",
+    "downloadUrl": "localizers/dispatch-localizer.zip",
+    "instructions": "1. Завантажте архів з локалізацією.\n2. Розархівуйте файл і скопіюйте папку ~mods у папку з грою (зазвичай SteamLibrary\\steamapps\\common\\Dispatch\\Dispatch\\Content\\Paks).",
     "links": {
       "store": "",
       "repo": ""

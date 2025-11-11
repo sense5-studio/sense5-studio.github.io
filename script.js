@@ -148,6 +148,17 @@ function createProjectCard(project, index) {
         ? `<div class="project-links">${links.join('')}</div>`
         : '';
     
+    const downloadButton = project.downloadUrl 
+        ? `<button class="btn btn-primary btn-card-download" data-project-index="${index}">
+            <span>Скачати</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+        </button>`
+        : '';
+    
     const newBadge = isNew ? '<span class="project-new-badge">NEW</span>' : '';
     
     return `
@@ -176,6 +187,7 @@ function createProjectCard(project, index) {
                 </div>
                 ${scopeBadges ? `<div class="project-scope">${scopeBadges}</div>` : ''}
                 ${project.summary ? `<p class="project-summary">${escapeHtml(project.summary)}</p>` : ''}
+                ${downloadButton ? `<div class="project-card-download">${downloadButton}</div>` : ''}
                 ${linksHtml}
             </div>
         </article>
@@ -218,11 +230,23 @@ function animateProgressBars() {
 function attachProjectCardHandlers() {
     document.querySelectorAll('.project-card[data-project-index]').forEach(card => {
         card.addEventListener('click', (e) => {
-            if (e.target.closest('a')) {
+            if (e.target.closest('a') || e.target.closest('button')) {
                 return;
             }
             
             const projectIndex = parseInt(card.getAttribute('data-project-index'));
+            const project = sortedProjects[projectIndex];
+            
+            if (project) {
+                openProjectModal(project);
+            }
+        });
+    });
+    
+    document.querySelectorAll('.btn-card-download').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const projectIndex = parseInt(btn.getAttribute('data-project-index'));
             const project = sortedProjects[projectIndex];
             
             if (project) {
@@ -277,6 +301,17 @@ function openProjectModal(project) {
                     </a>
                 </div>
             ` : ''}
+            
+            <div class="modal-report-bug">
+                <a href="mailto:sense5.studio.engineer@gmail.com?subject=${encodeURIComponent(project.title + ': Знайшов помилку')}" class="btn btn-report-bug">
+                    <span>Повідомити про помилку</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        <line x1="9" y1="10" x2="15" y2="10"></line>
+                        <line x1="12" y1="7" x2="12" y2="13"></line>
+                    </svg>
+                </a>
+            </div>
         </div>
     `;
     
@@ -291,7 +326,8 @@ function openProjectModal(project) {
                     'event_category': 'localization',
                     'event_label': projectTitle,
                     'value': 1,
-                    'custom_parameter_version': projectVersion
+                    'version': projectVersion,
+                    'project_title': projectTitle
                 });
             }
         });
