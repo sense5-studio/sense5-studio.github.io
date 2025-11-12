@@ -8,7 +8,7 @@
     "scope": ["UI", "Subtitles", "GPT-5"],
     "featured": true,
     "image": "assets/dispatch.jpg",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "releaseDate": "2025-11-12",
     "downloadUrl": "localizers/dispatch-localizer.zip",
     "instructions": "1. Завантажте архів з локалізацією.\n2. Розархівуйте файл і скопіюйте папку ~mods у папку з грою (зазвичай SteamLibrary\\steamapps\\common\\Dispatch\\Dispatch\\Content\\Paks).",
