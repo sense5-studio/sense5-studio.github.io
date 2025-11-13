@@ -3,19 +3,19 @@
     "title": "Dispatch",
     "year": 2025,
     "platform": "PC",
-    "status": "in_progress",
-    "progress": 75,
+    "status": "completed",
+    "progress": 100,
     "scope": ["UI", "Subtitles", "GPT-5"],
     "featured": true,
     "image": "assets/dispatch.jpg",
-    "version": "1.0.1",
-    "releaseDate": "2025-11-12",
+    "version": "1.0.2",
+    "releaseDate": "2025-11-13",
     "downloadUrl": "localizers/dispatch-localizer.zip",
     "instructions": "1. Завантажте архів з локалізацією.\n2. Розархівуйте файл і скопіюйте папку ~mods у папку з грою (зазвичай SteamLibrary\\steamapps\\common\\Dispatch\\Dispatch\\Content\\Paks).",
     "links": {
       "store": "",
       "repo": ""
     },
-    "summary": "6 епізодів з 8 перекладено."
+    "summary": "Всі 8 епізодів перекладено."
   }
 ]
