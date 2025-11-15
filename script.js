@@ -416,10 +416,41 @@ function initSmoothScroll() {
     });
 }
 
+function initDonateButtons() {
+    // Menu donate button
+    const menuDonateBtn = document.querySelector('.nav-link-donate');
+    if (menuDonateBtn) {
+        menuDonateBtn.addEventListener('click', function(e) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'donate_click', {
+                    'event_category': 'donation',
+                    'event_label': 'menu_donate_button',
+                    'location': 'navigation_menu'
+                });
+            }
+        });
+    }
+    
+    // Bottom section donate button
+    const bottomDonateBtn = document.querySelector('.btn-donate-large');
+    if (bottomDonateBtn) {
+        bottomDonateBtn.addEventListener('click', function(e) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'donate_click', {
+                    'event_category': 'donation',
+                    'event_label': 'bottom_donate_button',
+                    'location': 'donate_section'
+                });
+            }
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
     initThemeToggle();
     setFooterYear();
     initSmoothScroll();
     initModal();
+    initDonateButtons();
 });
